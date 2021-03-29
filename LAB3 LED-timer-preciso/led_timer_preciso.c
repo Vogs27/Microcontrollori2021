@@ -6,8 +6,8 @@ METODI PER AUMENTARE LA PRECISIONE DEL CONTEGGIO
  * Cambio la scala del conteggio, riducendo l'errore di approssimazione
 */
 unsigned int led_ms = 0;
-void main() {
-
+void main()
+{
 
     TRISC.RC0 = 0;
     LATC.RC0 = 1;
@@ -28,42 +28,34 @@ void main() {
     T0CON.T0PS0 = 1;
     */
 
-   INTCON.TMR0IE = 1;
-   INTCON.TMR0IF = 0;
-   
-
-
+    INTCON.TMR0IE = 1;
+    INTCON.TMR0IF = 0;
 
     // Others ph ....
 
-
-
     INTCON.GIE = 1;
 
-    while(1){
+    while (1)
+    {
 
         // Come faccio a farlo più preciso?
         /*Delay_ms(300);
         LATC.RC0 = !LATC.RC0;*/
 
-        if(led_ms>=300){
+        if (led_ms >= 300)
+        {
             led_ms = 0;
             LATC.RC0 = !LATC.RC0;
         }
-
-
     }
-
 }
 
+void interrupt()
+{
 
-void interrupt(){
-
-
-    if(INTCON.TMR0IF){
+    if (INTCON.TMR0IF)
+    {
         INTCON.TMR0IF = 0;
         led_ms += 15;
-
-
     }
- }
+}

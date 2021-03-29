@@ -1,5 +1,3 @@
 main
 	__CC2DW
-	VDelay_ms
-		Mul_32x32_U
 interrupt

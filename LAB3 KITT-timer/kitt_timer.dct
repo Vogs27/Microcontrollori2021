@@ -656,7 +656,6 @@ delay_5ms
 delay_80us
 delay_8ms
 delay_cyc
-delayled
 dhen
 dhen_bit
 dhen_ssp1con3_bit
@@ -929,6 +928,8 @@ kbi2
 kbi2_bit
 kbi3
 kbi3_bit
+kitt_delay
+kitt_ms
 lata
 lata0
 lata0_bit
