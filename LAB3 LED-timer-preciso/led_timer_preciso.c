@@ -1,5 +1,11 @@
+/*
+METODI PER AUMENTARE LA PRECISIONE DEL CONTEGGIO
+ * Modificare l'incremento di led_ms
+(*) Cambiare il periodo di tick del timer agendo su TMR0L
+ * Modificare il clock in ingresso al timer
+ * Cambio la scala del conteggio, riducendo l'errore di approssimazione
+*/
 unsigned int led_ms = 0;
-
 void main() {
 
 
@@ -60,8 +66,4 @@ void interrupt(){
 
 
     }
-    // Come gest una ISR con N interrupt?
-
-
-
-}
+ }
