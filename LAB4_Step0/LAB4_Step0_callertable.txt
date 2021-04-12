@@ -1,3 +1,7 @@
 main
 	__CC2DW
+	Lcd_Cmd
+		Delay_1us
+		Delay_5500us
+		Delay_50us
 interrupt
