@@ -8,4 +8,4 @@ hint: 0	1144	Used ROM (bytes): 246 (1%)  Free ROM (bytes): 32522 (99%)	Used ROM 
 diagnostics: 0	125	Project Linked Successfully	kitt_timer.mcppi
 diagnostics: 0	128	Linked in 31 ms	 
 diagnostics: 0	129	Project 'kitt_timer.mcppi' completed: 234 ms	 
-diagnostics: 0	103	Finished successfully: 29 mar 2021, 19:15:44	kitt_timer.mcppi
+diagnostics: 0	103	Finished successfully: 29 mar 2021, 19:17:14	kitt_timer.mcppi

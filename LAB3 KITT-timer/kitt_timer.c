@@ -72,13 +72,7 @@ void main()
                 dir = 1;
             else if(LATC == 0b10000000)
                 dir = 0;
-
-
-
-
         }
-
-
     }
 }
 
