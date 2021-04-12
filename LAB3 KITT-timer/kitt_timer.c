@@ -99,7 +99,6 @@ void interrupt()
     else if (INTCON.TMR0IF)
     { //se la flag di interrupt per timer0 è alta
         INTCON.TMR0IF = 0;
-        INTCON.TMR0IF = 0;
         //TMR0L = 6;
         kitt_ms += 33;
         
