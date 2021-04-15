@@ -55,14 +55,14 @@ void main() {
             }
 
             //COUNTER AND DISPLAY SECTION
-           /* if(counter_ms > 500){
+            if(counter_ms > 500){
                 counter_sec++;
                 counter_ms=0;
                 Lcd_Cmd(_LCD_CLEAR);
                 Lcd_Cmd(_LCD_CURSOR_OFF);
                 IntToStr(counter_sec,output_num);
                 Lcd_Out(1,1,output_num);
-            }*/
+            }
         }
 }
 
