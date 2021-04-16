@@ -23,11 +23,10 @@ void main() {
  char dir = 1;
  char cycle = 0;
  char counter_sec = 0;
- char output_num[3];
+ char output_num[7];
  T0CON = 0b11000111;
  TMR0L = 248;
  TRISD = 0b00000000;
-
 
  INTCON.TMR0IE = 1;
  INTCON.GIE = 1;

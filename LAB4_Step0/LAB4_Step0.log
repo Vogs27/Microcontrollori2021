@@ -1,11 +1,11 @@
 0	1	mikroCPIC1618.exe -MSF -DBG -pP18F45K22 -DL -O11111114 -fo8 -N"D:\Users\aavog\Documents\GitHub\Microcontrollori2021\LAB4_Step0\LAB4_Step0.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"D:\Users\aavog\Documents\GitHub\Microcontrollori2021\LAB4_Step0\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" "LAB4_Step0.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CType.mcl" "__Lib_CString.mcl" "__Lib_Conversions.mcl" "__Lib_LcdConsts.mcl" "__Lib_Lcd.mcl"	 
 hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
 diagnostics: 0	122	Compilation Started	LAB4_Step0.c
-diagnostics: 76	123	Compiled Successfully	LAB4_Step0.c
-diagnostics: 0	127	All files Compiled in 47 ms	 
-hint: 0	1144	Used RAM (bytes): 33 (2%)  Free RAM (bytes): 1482 (98%)	Used RAM (bytes): 33 (2%)  Free RAM (bytes): 1482 (98%)
+diagnostics: 75	123	Compiled Successfully	LAB4_Step0.c
+diagnostics: 0	127	All files Compiled in 62 ms	 
+hint: 0	1144	Used RAM (bytes): 37 (2%)  Free RAM (bytes): 1478 (98%)	Used RAM (bytes): 37 (2%)  Free RAM (bytes): 1478 (98%)
 hint: 0	1144	Used ROM (bytes): 1100 (3%)  Free ROM (bytes): 31668 (97%)	Used ROM (bytes): 1100 (3%)  Free ROM (bytes): 31668 (97%)
 diagnostics: 0	125	Project Linked Successfully	LAB4_Step0.mcppi
 diagnostics: 0	128	Linked in 16 ms	 
 diagnostics: 0	129	Project 'LAB4_Step0.mcppi' completed: 219 ms	 
-diagnostics: 0	103	Finished successfully: 16 apr 2021, 16:42:54	LAB4_Step0.mcppi
+diagnostics: 0	103	Finished successfully: 16 apr 2021, 17:59:55	LAB4_Step0.mcppi
