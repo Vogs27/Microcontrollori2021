@@ -943,16 +943,6 @@ irng1
 irng1_bit
 irvst
 irvst_bit
-isalnum
-isalpha
-iscntrl
-isdigit
-isgraph
-islower
-ispunct
-isspace
-isupper
-isxdigit
 itrim0
 itrim0_bit
 itrim1
@@ -2141,6 +2131,7 @@ tblptrl
 tblptru
 tgen
 tgen_bit
+timer_go
 tmr0h
 tmr0ie
 tmr0ie_bit
@@ -2258,11 +2249,9 @@ tmr6on
 tmr6on_bit
 to_
 to__bit
-tolower
 tosh
 tosl
 tosu
-toupper
 trigsel
 trigsel_bit
 trisa

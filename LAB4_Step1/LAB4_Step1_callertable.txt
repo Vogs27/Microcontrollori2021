@@ -7,9 +7,6 @@ main
 		Delay_1us
 		Delay_5500us
 		Delay_50us
-	IntToStr
-		WordToStr
-			Div_16X16_U
 	Lcd_Out
 		Lcd_Cmd
 			Delay_1us
@@ -20,4 +17,7 @@ main
 				Delay_1us
 				Delay_5500us
 				Delay_50us
+	IntToStr
+		WordToStr
+			Div_16X16_U
 interrupt

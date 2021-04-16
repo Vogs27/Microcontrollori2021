@@ -15,6 +15,7 @@ _main:
 	MOVLW       1
 	MOVWF       main_dir_L0+0 
 	CLRF        main_cycle_L0+0 
+	CLRF        main_counter_sec_L0+0 
 ;LAB4_Step0.c,26 :: 		T0CON = 0b11000111;
 	MOVLW       199
 	MOVWF       T0CON+0 
@@ -27,6 +28,8 @@ _main:
 	BSF         INTCON+0, 5 
 ;LAB4_Step0.c,32 :: 		INTCON.GIE = 1;
 	BSF         INTCON+0, 7 
+;LAB4_Step0.c,34 :: 		Lcd_Init();                        // Initialize Lcd
+	CALL        _Lcd_Init+0, 0
 ;LAB4_Step0.c,35 :: 		Lcd_Cmd(_LCD_CLEAR);               // Clear display
 	MOVLW       1
 	MOVWF       FARG_Lcd_Cmd_out_char+0 
@@ -41,10 +44,10 @@ L_main0:
 	MOVF        _counter_kitt+1, 0 
 	SUBLW       3
 	BTFSS       STATUS+0, 2 
-	GOTO        L__main9
+	GOTO        L__main10
 	MOVF        _counter_kitt+0, 0 
 	SUBLW       232
-L__main9:
+L__main10:
 	BTFSC       STATUS+0, 0 
 	GOTO        L_main2
 ;LAB4_Step0.c,41 :: 		counter_kitt = 0;
@@ -96,6 +99,51 @@ L_main5:
 L_main6:
 ;LAB4_Step0.c,55 :: 		}
 L_main2:
+;LAB4_Step0.c,58 :: 		if(counter_ms > 500){
+	MOVF        _counter_ms+1, 0 
+	SUBLW       1
+	BTFSS       STATUS+0, 2 
+	GOTO        L__main11
+	MOVF        _counter_ms+0, 0 
+	SUBLW       244
+L__main11:
+	BTFSC       STATUS+0, 0 
+	GOTO        L_main7
+;LAB4_Step0.c,59 :: 		counter_sec++;
+	INCF        main_counter_sec_L0+0, 1 
+;LAB4_Step0.c,60 :: 		counter_ms=0;
+	CLRF        _counter_ms+0 
+	CLRF        _counter_ms+1 
+;LAB4_Step0.c,61 :: 		Lcd_Cmd(_LCD_CLEAR);
+	MOVLW       1
+	MOVWF       FARG_Lcd_Cmd_out_char+0 
+	CALL        _Lcd_Cmd+0, 0
+;LAB4_Step0.c,62 :: 		Lcd_Cmd(_LCD_CURSOR_OFF);
+	MOVLW       12
+	MOVWF       FARG_Lcd_Cmd_out_char+0 
+	CALL        _Lcd_Cmd+0, 0
+;LAB4_Step0.c,63 :: 		IntToStr(counter_sec,output_num);
+	MOVF        main_counter_sec_L0+0, 0 
+	MOVWF       FARG_IntToStr_input+0 
+	MOVLW       0
+	MOVWF       FARG_IntToStr_input+1 
+	MOVLW       main_output_num_L0+0
+	MOVWF       FARG_IntToStr_output+0 
+	MOVLW       hi_addr(main_output_num_L0+0)
+	MOVWF       FARG_IntToStr_output+1 
+	CALL        _IntToStr+0, 0
+;LAB4_Step0.c,64 :: 		Lcd_Out(1,1,output_num);
+	MOVLW       1
+	MOVWF       FARG_Lcd_Out_row+0 
+	MOVLW       1
+	MOVWF       FARG_Lcd_Out_column+0 
+	MOVLW       main_output_num_L0+0
+	MOVWF       FARG_Lcd_Out_text+0 
+	MOVLW       hi_addr(main_output_num_L0+0)
+	MOVWF       FARG_Lcd_Out_text+1 
+	CALL        _Lcd_Out+0, 0
+;LAB4_Step0.c,65 :: 		}
+L_main7:
 ;LAB4_Step0.c,66 :: 		}
 	GOTO        L_main0
 ;LAB4_Step0.c,67 :: 		}
@@ -108,7 +156,7 @@ _interrupt:
 ;LAB4_Step0.c,69 :: 		void interrupt(){
 ;LAB4_Step0.c,70 :: 		if(INTCON.TMR0IF){
 	BTFSS       INTCON+0, 2 
-	GOTO        L_interrupt7
+	GOTO        L_interrupt8
 ;LAB4_Step0.c,71 :: 		INTCON.TMR0IF=0;
 	BCF         INTCON+0, 2 
 ;LAB4_Step0.c,72 :: 		TMR0L = 248;
@@ -121,9 +169,9 @@ _interrupt:
 	INFSNZ      _counter_kitt+0, 1 
 	INCF        _counter_kitt+1, 1 
 ;LAB4_Step0.c,75 :: 		}
-L_interrupt7:
+L_interrupt8:
 ;LAB4_Step0.c,76 :: 		}
 L_end_interrupt:
-L__interrupt11:
+L__interrupt13:
 	RETFIE      1
 ; end of _interrupt

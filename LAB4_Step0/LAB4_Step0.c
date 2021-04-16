@@ -26,12 +26,11 @@ void main() {
     T0CON = 0b11000111;
     TMR0L = 248;
     TRISD = 0b00000000;
-    //IOCD non serve, ritardo fisso
     //Interrupt
     INTCON.TMR0IE = 1;
     INTCON.GIE = 1;
     
-    //Lcd_Init();                        // Initialize Lcd
+    Lcd_Init();                        // Initialize Lcd
     Lcd_Cmd(_LCD_CLEAR);               // Clear display
     Lcd_Cmd(_LCD_CURSOR_OFF);          // Cursor off
 

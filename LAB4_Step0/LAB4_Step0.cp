@@ -32,7 +32,7 @@ void main() {
  INTCON.TMR0IE = 1;
  INTCON.GIE = 1;
 
-
+ Lcd_Init();
  Lcd_Cmd(_LCD_CLEAR);
  Lcd_Cmd(_LCD_CURSOR_OFF);
 
@@ -54,7 +54,16 @@ void main() {
  cycle --;
  }
  }
-#line 66 "D:/Users/aavog/Documents/GitHub/Microcontrollori2021/LAB4_Step0/LAB4_Step0.c"
+
+
+ if(counter_ms > 500){
+ counter_sec++;
+ counter_ms=0;
+ Lcd_Cmd(_LCD_CLEAR);
+ Lcd_Cmd(_LCD_CURSOR_OFF);
+ IntToStr(counter_sec,output_num);
+ Lcd_Out(1,1,output_num);
+ }
  }
 }
 
