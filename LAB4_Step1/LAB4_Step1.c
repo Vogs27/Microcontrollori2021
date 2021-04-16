@@ -1,6 +1,6 @@
 unsigned int counter_ms = 0;
 unsigned int counter_kitt = 0;
-int timer_go = 1;
+volatile int timer_go = 1;
 
 //LCD module
 sbit LCD_RS at LATB4_bit;
@@ -23,7 +23,7 @@ void main()
     char dir = 1;
     char cycle = 0;
     char counter_sec = 0;
-    char output_num[3];
+    char output_num[8];
     int PORTA_Old = 0;
     int kitt_delay = 500;
     T0CON = 0b11000111;
@@ -42,7 +42,7 @@ void main()
     while (1)
     {
         //PORTA SECTION
-        if (!(PORTA_Old && PORTA) && PORTA != 0)
+        if (!((PORTA_Old&0b00011111) & (PORTA&0b00011111)) && (PORTA&0b00011111) != 0)
         {
             PORTA_Old = PORTA;
             if (PORTA.RA0)
@@ -58,7 +58,7 @@ void main()
                 counter_sec = 0;
                 Lcd_Cmd(_LCD_CLEAR);
                 Lcd_Cmd(_LCD_CURSOR_OFF);
-                Lcd_Out(1, 1, "0");
+                Lcd_Out(1, 6, "0");
             }
             else if (PORTA.RA3)
             {
