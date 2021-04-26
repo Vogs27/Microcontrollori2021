@@ -41,7 +41,11 @@ Count=0
 [PLDS]
 Count=0
 [Useses]
-Count=0
+File0=C_String
+File1=Lcd
+File2=Lcd_Constants
+File3=Conversions
+Count=4
 [INTERRUPT_DEFS]
 VECTOR_MODE=0
 IVT_BASE=00000008
@@ -49,7 +53,9 @@ IVT_BASE=00000008
 0=LAB4_Step3.mcppi
 Count=1
 [LIB_EXPANDED_NODES]
-Count=1
+0=mikroE Libraries
+1=System Libraries
+Count=2
 [PROGRAMMER_TYPE]
 Value=mikroE mikroProg
 [CODEGRIP_OPTIONS]
