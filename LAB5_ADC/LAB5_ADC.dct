@@ -778,6 +778,7 @@ ferr1_bit
 ferr2
 ferr2_bit
 fixsign32
+flag
 floattostr
 floattostr_fixlen
 flt0
