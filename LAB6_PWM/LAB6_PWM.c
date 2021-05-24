@@ -10,7 +10,7 @@ void main() {
     PIR1.ADIF = 0;
     INTCON.PEIE = 1;
     INTCON.GIE = 1;
-            ADCON0.GO_NOT_DONE = 1;
+    ADCON0.GO_NOT_DONE = 1;
 
     // AN0 ADC ad 8 bit  V
     // RE2 PWM a 8 bit dove Ton è V letta su AN0
